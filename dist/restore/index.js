@@ -357,6 +357,11 @@ function getCacheEntryS3(s3Options, s3BucketName, keys, paths) {
             if (s3ContinuationToken != undefined) {
                 param.ContinuationToken = s3ContinuationToken;
             }
+
+            core.debug(`bucket: ${s3BucketName}`);
+            core.debug(`param: ${param.Bucket}`);
+            core.debug(`URL:`);
+            core.debug(JSON.stringify(new client_s3_1.ListObjectsV2Command(param)));
             let response;
             try {
                 response = yield s3client.send(new client_s3_1.ListObjectsV2Command(param));

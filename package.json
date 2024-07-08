@@ -26,9 +26,7 @@
     "@actions/cache": "https://gitpkg.now.sh/whywaita/actions-toolkit-s3/packages/cache?main",
     "@actions/core": "^1.10.0",
     "@actions/exec": "^1.1.1",
-    "@actions/io": "^1.1.2",
-    "@aws-sdk/client-s3": "^3.51.0",
-    "@aws-sdk/types": "^3.50.0"
+    "@actions/io": "^1.1.2"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
