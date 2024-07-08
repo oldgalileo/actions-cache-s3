@@ -107,3 +107,7 @@
 ### 3.3.1
 
 - Reduced segment size to 128MB and segment timeout to 10 minutes to fail fast in case the cache download is stuck.
+
+### 4.0.0
+
+- Upgraded to Node 20
