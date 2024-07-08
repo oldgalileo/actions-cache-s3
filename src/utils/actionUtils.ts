@@ -101,7 +101,14 @@ export function getInputS3ClientConfig(): S3ClientConfig | undefined {
         region: core.getInput(Inputs.AWSRegion) || process.env["AWS_REGION"],
         endpoint: core.getInput(Inputs.AWSEndpoint),
         bucketEndpoint: core.getBooleanInput(Inputs.AWSS3BucketEndpoint),
-        forcePathStyle: core.getBooleanInput(Inputs.AWSS3ForcePathStyle)
+        forcePathStyle: core.getBooleanInput(Inputs.AWSS3ForcePathStyle),
+        logger: {
+            error: s => core.error(JSON.stringify(s)),
+            warn: s => core.warning(JSON.stringify(s)),
+            info: s => core.info(JSON.stringify(s)),
+            debug: s => core.debug(JSON.stringify(s)),
+            trace: s => core.debug(JSON.stringify(s)),
+        }
     } as S3ClientConfig;
 
     core.debug("Enable S3 backend mode.");
